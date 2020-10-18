@@ -1,0 +1,2 @@
+[mediawiki]
+10.128.0.4	ansible_hostname=mediawiki
