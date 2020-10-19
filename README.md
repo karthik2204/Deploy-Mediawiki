@@ -28,3 +28,12 @@ This repository helps you to spin a GCP instance automatically and install & con
 
 * Update the Ansible's inventory file with the output(Spinned up instance's IP address) from terraform execuion  [Pre-requisite]
 * Initiate the playbook execution by **ansible-playbook -i hosts playbook.yml --extra-vars="root_password=xxx wiki_password=yyy" -u < username > --private-key < path to user's private key file >**
+
+## Terraform and Ansible Integration:
+
+* Instead of seperate execution of Ansible playbook, you can integrate Ansible playbook execution in Terraform using remote-exe provisioner.
+  Remote-exec provisioner should contain:
+    * Mention your ssh username and private key file path for connection
+    * Install Ansible in the target server
+    * Call your Ansible playbook with required paramaters needed for the execution
+
